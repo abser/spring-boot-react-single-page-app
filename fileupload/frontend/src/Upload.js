@@ -7,8 +7,10 @@ class Upload extends React.Component {
     render() {
         return (
             <div>
-                <input type="file" name="my_file" id="my_file" />
-                <Button onClick={()=> {}}>Upload</Button>
+                <form method="POST" enctype="multipart/form-data" action="/api/file_upload">
+                    <input type="file" name="my_file" id="my_file" />
+                    <Button type="submit" onClick={()=> {}}>Upload</Button>
+                </form>
             </div>
         )
     }

@@ -1,4 +1,4 @@
-package com.practice.fileupload;
+package com.practice.fileupload.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
