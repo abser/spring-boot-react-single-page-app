@@ -1,6 +1,5 @@
 package com.practice.fileupload.controller;
 
-import com.practice.fileupload.payload.UploadFileResponse;
 import com.practice.fileupload.service.FileStorageService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,43 +8,30 @@ import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
+// import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
 import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
-@Controller
+import java.io.IOException;
+import java.util.List;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
 @RequestMapping("/api")
 public class FileController {
-
     private static final Logger logger = LoggerFactory.getLogger(FileController.class);
 
     @Autowired
     private FileStorageService fileStorageService;
 
     @PostMapping("/file_upload")
-    public String uploadFile(@RequestParam("my_file") MultipartFile file) {
+    public List<String> uploadFile(@RequestParam("my_file") MultipartFile file) {
         String fileName = fileStorageService.storeFile(file);
-        //Get the file
-        // Process CSV
+        //Get the file content in List       
+        return fileStorageService.readCSVFile();
+
         // Insert into DB
-        // return;
-
-        
-        // String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-        //         .path("api/downloadFile/")
-        //         .path(fileName)
-        //         .toUriString();
-
-        // return new UploadFileResponse(fileName, fileDownloadUri,
-        //         file.getContentType(), file.getSize());
-                return "redirect:/";
     }
 
 
