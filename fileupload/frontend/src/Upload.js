@@ -42,7 +42,7 @@ class Upload extends React.Component {
             return(
                 <table>
                     <tr>
-                        <th>Hashed NRIC</th>
+                        <th>Uploaded Data</th>
                     </tr>
                     {row}
                 </table>
@@ -53,7 +53,6 @@ class Upload extends React.Component {
     render() {
         return (
             <div>
-                <p>{this.state.uploadedNRIC ? this.showUploadedNRIC(this.state.uploadedNRIC) : null}</p>
                 <form method="POST" encType="multipart/form-data">
                     <input type="file" name="my_file" id="my_file" />
                     <Button type="submit" onClick={this.handleFileUpload.bind(this)}>Upload</Button>
