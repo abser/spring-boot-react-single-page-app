@@ -21,6 +21,3 @@ npm run build
 ## Access the app
 
 http://localhost:8080
-
-
-
