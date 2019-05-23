@@ -1,8 +1,0 @@
-/Users/nurul/OpenSource/spring-boot-react-single-page-app/src/main/java/com/practice/fileupload/controller/ViewController.java
-/Users/nurul/OpenSource/spring-boot-react-single-page-app/src/main/java/com/practice/fileupload/payload/UploadFileResponse.java
-/Users/nurul/OpenSource/spring-boot-react-single-page-app/src/main/java/com/practice/fileupload/exception/MyFileNotFoundException.java
-/Users/nurul/OpenSource/spring-boot-react-single-page-app/src/main/java/com/practice/fileupload/controller/FileController.java
-/Users/nurul/OpenSource/spring-boot-react-single-page-app/src/main/java/com/practice/fileupload/service/FileStorageService.java
-/Users/nurul/OpenSource/spring-boot-react-single-page-app/src/main/java/com/practice/fileupload/DemoApplication.java
-/Users/nurul/OpenSource/spring-boot-react-single-page-app/src/main/java/com/practice/fileupload/exception/FileStorageException.java
-/Users/nurul/OpenSource/spring-boot-react-single-page-app/src/main/java/com/practice/fileupload/property/FileStorageProperties.java

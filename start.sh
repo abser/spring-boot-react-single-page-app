@@ -1,2 +1,2 @@
 #!/bin/sh
-java -jar lifechain-0.0.1-SNAPSHOT.jar
+java -jar fileupload-0.0.1-SNAPSHOT.jar

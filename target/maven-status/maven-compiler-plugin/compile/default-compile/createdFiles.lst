@@ -1,8 +1,0 @@
-com/practice/fileupload/exception/FileStorageException.class
-com/practice/fileupload/controller/FileController.class
-com/practice/fileupload/property/FileStorageProperties.class
-com/practice/fileupload/payload/UploadFileResponse.class
-com/practice/fileupload/exception/MyFileNotFoundException.class
-com/practice/fileupload/DemoApplication.class
-com/practice/fileupload/controller/ViewController.class
-com/practice/fileupload/service/FileStorageService.class

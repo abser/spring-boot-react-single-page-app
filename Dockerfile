@@ -1,17 +1,21 @@
-FROM alpine:3.8
-FROM maven:3.5.2-jdk-8-alpine AS MAVEN_TOOL_CHAIN
+FROM node:8.16-jessie-slim AS frontend-build
+# ENV workdir /tmp/frontend/
+WORKDIR /tmp/frontend/
+COPY frontend .
+RUN npm install && npm run build && ls .
+# RUN npm run build
 
-ENV workdir /tmp/
-WORKDIR $workdir
-
-COPY . /tmp/
-
-RUN mvn clean package -DskipTests
+FROM maven:3.5.2-jdk-8-alpine AS spring-boot-build
+WORKDIR /tmp/
+COPY src /tmp/src/
+COPY pom.xml .
+COPY mvnw .
+COPY --from=frontend-build /tmp/frontend/build /tmp/src/main/resources/static/
+RUN mvn clean package -DskipTests && ls .
 
 FROM java:8-jdk-alpine
-ENV workdir2 /usr/src/app
-WORKDIR $workdir2
-COPY --from=MAVEN_TOOL_CHAIN /tmp/target/lifechain-0.0.1-SNAPSHOT.jar /usr/src/app/
+WORKDIR /usr/src/app
+COPY --from=spring-boot-build /tmp/target/fileupload-0.0.1-SNAPSHOT.jar /usr/src/app/
 COPY start.sh /usr/src/app/
 
 EXPOSE 8080

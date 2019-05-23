@@ -1,2 +1,5 @@
 .vscode
 upload
+target
+frontend/node_modules
+frontend/build
